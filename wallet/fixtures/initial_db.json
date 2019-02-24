@@ -1,0 +1,116 @@
+[
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "customers",
+      "permissions": []
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "merchants",
+      "permissions": []
+    }
+  },
+  {
+    "model": "wallet.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$s3cmyuKjvGZK$Qd0D1yp7xsRrgrwjXGVt6AqTp87ussJTqI+usJhGTFY=",
+      "last_login": "2019-02-23T08:49:46Z",
+      "is_superuser": false,
+      "username": "test_merchant_1",
+      "first_name": "",
+      "last_name": "",
+      "email": "test_merchant_1@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-02-21T19:38:34Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "wallet.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$s3cmyuKjvGZK$Qd0D1yp7xsRrgrwjXGVt6AqTp87ussJTqI+usJhGTFY=",
+      "last_login": "2019-02-23T08:49:46Z",
+      "is_superuser": false,
+      "username": "test_customer_1",
+      "first_name": "",
+      "last_name": "",
+      "email": "test_customer_1@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-02-21T19:38:34Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "wallet.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$s3cmyuKjvGZK$Qd0D1yp7xsRrgrwjXGVt6AqTp87ussJTqI+usJhGTFY=",
+      "last_login": "2019-02-23T08:49:46Z",
+      "is_superuser": false,
+      "username": "test_customer_with_wallet",
+      "first_name": "",
+      "last_name": "",
+      "email": "test_customer_with_wallet@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-02-21T19:38:34Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "wallet.wallet",
+    "pk": "efdb36db-ff38-429c-9b87-bb6ab47843b9",
+    "fields": {
+      "user": 3,
+      "updated_at": "2019-02-23T22:15:49.965Z",
+      "created_at": "2019-02-23T22:15:49.965Z"
+    }
+  },
+  {
+    "model": "wallet.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$s3cmyuKjvGZK$Qd0D1yp7xsRrgrwjXGVt6AqTp87ussJTqI+usJhGTFY=",
+      "last_login": "2019-02-23T08:49:46Z",
+      "is_superuser": false,
+      "username": "test_merchant_with_wallet",
+      "first_name": "",
+      "last_name": "",
+      "email": "test_merchant_with_wallet@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2019-02-21T19:38:34Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "wallet.wallet",
+    "pk": "ce8262a7-3ad5-44d6-b495-774a983bbf14",
+    "fields": {
+      "user": 4,
+      "updated_at": "2019-02-23T22:15:49.965Z",
+      "created_at": "2019-02-23T22:15:49.965Z"
+    }
+  }
+]

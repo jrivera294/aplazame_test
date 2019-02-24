@@ -49,18 +49,17 @@ RUN pip download -d /build -r aplazame/requirements/common.txt --no-input && \
 #
 # Backend Test Stage
 #
-#FROM backend-build-stage as backend-test-stage
-#
-## Test reports volume
-#VOLUME /reports
-#
-## Add test entrypoint script
-#COPY test_entrypoint.sh /usr/local/bin/test_entrypoint.sh
-#RUN chmod +x /usr/local/bin/test_entrypoint.sh
-#
-## Set defaults for entrypoint and command string
-#ENTRYPOINT ["/usr/local/bin/test_entrypoint.sh"]
-#CMD ["pytest","--cov-report term-missing", "--cov=aplazame", "--junitxml=/reports/pytests.xml"]
+FROM backend-build-stage as backend-test-stage
+
+RUN pip install -r aplazame/requirements/test.txt --no-input
+
+# Add test entrypoint script
+COPY test_entrypoint.sh /usr/local/bin/test_entrypoint.sh
+RUN chmod +x /usr/local/bin/test_entrypoint.sh
+
+# Set defaults for entrypoint and command string
+ENTRYPOINT ["/usr/local/bin/test_entrypoint.sh"]
+CMD ["python", "manage.py", "test"]
 
 
 #

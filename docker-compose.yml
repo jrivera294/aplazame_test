@@ -9,16 +9,18 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
 
-#  backend-test:
-#    build:
-#      target: backend-test-stage
-#    volumes:
-#      - ./artifacts/reports:/reports
-#    links:
-#      - db
+  backend-test:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: backend-test-stage
+    volumes:
+      - ./artifacts/reports:/reports
+    links:
+      - db
 
   backend:
-    image: "jrr/aplazame_backend"
+    image: "jrivera294/aplazame_backend:latest"
     build:
       dockerfile: Dockerfile
       context: .

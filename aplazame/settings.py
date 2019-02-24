@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'wallet.apps.WalletConfig',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,9 @@ DATABASES = {
         'NAME': 'aplazame',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        # 'HOST': '52.58.172.109',  # Local development
+        'HOST': 'db',  # Docker development
+        'PORT': '80',
     }
 }
 
@@ -123,3 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+AUTH_USER_MODEL = 'wallet.User'
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '52.58.172.109']

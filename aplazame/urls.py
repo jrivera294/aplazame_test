@@ -13,17 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from rest_framework.documentation import include_docs_urls
 
-from wallet.views import UserViewSet, GroupViewSet
+from wallet.views import UserViewSet, WalletViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
+router.register(r'wallet', WalletViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    url(r'^docs/', include_docs_urls(title='Aplazame Wallet'))
 ]
